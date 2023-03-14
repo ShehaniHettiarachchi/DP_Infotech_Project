@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+
+//Public pages
+import Home from "./components/pages/Home/Home";
+
+//Employee
+import Employees from "./components/pages/Employee/Emp_details";
+import AddEmp from "./components/pages/Employee/Add_emp";
+import UpdateEmp from "./components/pages/Employee/Update_emp";
+
+//family
+import EmpFamily from "./components/pages/Family/Family_details";
+import AddFam from "./components/pages/Family/Add_fam";
+import UpdateFam from "./components/pages/Family/Update_fam";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Public Routes*/}
+        <Route exact path="/" element={<Home />} />
+
+        {/*Employee*/}
+        <Route path="/employee" element={<Employees />} />
+        <Route path="/AddEmp" element={<AddEmp />} />
+        <Route path="/UpdateEmp/:id" element={<UpdateEmp />} />
+
+        {/*Employee-Family*/}
+        <Route path="/family/:id" element={<EmpFamily />} />
+        <Route path="/AddFam/:id" element={<AddFam />} />
+        <Route path="/UpdateFam/:id" element={<UpdateFam />} />
+      </Routes>
+    </Router>
   );
 }
 
