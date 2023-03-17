@@ -3,12 +3,12 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 
 export default function AddFamily() {
+  const { id } = useParams();
   const [allFam, setAllFam] = useState("");
   const [firstname, setFamFirstname] = useState("");
   const [surname, setFamSurname] = useState("");
   const [relationship, setFamRelationship] = useState("");
-
-  const { id } = useParams();
+  const [empID, setEmpId] = useState(id);
 
   useEffect(() => {
     axios
@@ -23,8 +23,8 @@ export default function AddFamily() {
     e.preventDefault();
 
     const newFam = {
-      id,
       firstname,
+      empID,
       surname,
       relationship,
     };
@@ -41,7 +41,8 @@ export default function AddFamily() {
         navigate("/employee");
       })
       .catch((err) => {
-        alert(err);
+        // alert(err);
+        // <div>(err)</div>
       });
   }
 
@@ -71,6 +72,19 @@ export default function AddFamily() {
           </div>
           <div class="card-body">
             <form class="row g-3 p-6" onSubmit={sendData}>
+              {/* <div class="col-md-6">
+                <label for="inputName" class="form-label">
+               User ID
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  name="firstName"
+                  value={id}
+                  onChange={(e) => setEmpId(e.target.value)}
+                  readOnly
+                ></input>
+              </div> */}
               <div class="col-md-6">
                 <label for="inputName" class="form-label">
                   First Name
@@ -79,9 +93,14 @@ export default function AddFamily() {
                   type="text"
                   className="form-control"
                   name="firstName"
+                  pattern="[A-Za-z\s]+"
                   onChange={(e) => setFamFirstname(e.target.value)}
+                  required
                 ></input>
+                <div className="valid-feedback">Valid Name</div>
+                <div className="invalid-feedback">Not a valid name.</div>
               </div>
+
               <div class="col-md-6">
                 <label for="inputName" class="form-label">
                   Surname
@@ -90,8 +109,12 @@ export default function AddFamily() {
                   type="text"
                   className="form-control"
                   name="lastName"
+                  pattern="[A-Za-z\s]+"
                   onChange={(e) => setFamSurname(e.target.value)}
+                  required
                 ></input>
+                <div className="valid-feedback">Valid Name</div>
+                <div className="invalid-feedback">Not a valid name.</div>
               </div>
               <div class="col-md-6">
                 <label for="inputEmail4" class="form-label">
@@ -101,7 +124,9 @@ export default function AddFamily() {
                   type="text"
                   className="form-control"
                   id="relationship"
+                  pattern="[A-Za-z\s]+"
                   onChange={(e) => setFamRelationship(e.target.value)}
+                  required
                 ></input>
               </div>
               <div class="col-12">

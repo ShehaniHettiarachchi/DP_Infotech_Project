@@ -59,4 +59,25 @@ http: router.route("/family-member/:id").put(async (req, res) => {
     });
 });
 
+// Deete employee Family Details
+
+http: router.route("/:id").delete(async (req, res) => {
+  let userID = req.params.id;
+
+  await Empfam.findByIdAndDelete(userID)
+
+    .then(() => {
+      res
+        .status(200)
+        .send({ status: "Employee Family Details successfully Deleted" });
+    })
+    .catch((err) => {
+      console.log(err.message);
+      res.status(500).send({
+        status: "Error with deleting Employee Family Details",
+        error: err.message,
+      });
+    });
+});
+
 module.exports = router;

@@ -87,4 +87,22 @@ http: router.route("/").get((req, res) => {
     });
 });
 
+// Deete employee
+
+http: router.route("/:id").delete(async (req, res) => {
+  let userID = req.params.id;
+
+  await Employee.findByIdAndDelete(userID)
+
+    .then(() => {
+      res.status(200).send({ status: "Employee successfully Deleted" });
+    })
+    .catch((err) => {
+      console.log(err.message);
+      res
+        .status(500)
+        .send({ status: "Error with deleting Employee", error: err.message });
+    });
+});
+
 module.exports = router;

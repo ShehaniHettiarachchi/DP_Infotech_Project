@@ -1,5 +1,5 @@
 import React from "react";
-import getstarted from "../../Images/getstarted.jpg";
+import getstarted from "../Images/getstarted.jpg";
 import { Link } from "react-router-dom";
 
 function Home() {

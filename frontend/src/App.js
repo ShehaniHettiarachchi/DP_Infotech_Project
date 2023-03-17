@@ -2,23 +2,25 @@ import "./App.css";
 import React from "react";
 
 //Public pages
-import Home from "./components/pages/Home/Home";
+import Home from "./components/Home/Home";
+import Navbar from "./components/includes/Navbar";
 
 //Employee
-import Employees from "./components/pages/Employee/Emp_details";
-import AddEmp from "./components/pages/Employee/Add_emp";
-import UpdateEmp from "./components/pages/Employee/Update_emp";
+import Employees from "./pages/Employee/Emp_details";
+import AddEmp from "./pages/Employee/Add_emp";
+import UpdateEmp from "./pages/Employee/Update_emp";
 
 //family
-import EmpFamily from "./components/pages/Family/Family_details";
-import AddFam from "./components/pages/Family/Add_fam";
-import UpdateFam from "./components/pages/Family/Update_fam";
+import EmpFamily from "./pages/Family/Family_details";
+import AddFam from "./pages/Family/Add_fam";
+import UpdateFam from "./pages/Family/Update_fam";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         {/* Public Routes*/}
         <Route exact path="/" element={<Home />} />

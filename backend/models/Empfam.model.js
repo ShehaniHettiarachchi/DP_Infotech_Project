@@ -6,7 +6,7 @@ const EmpfamSchema = new Schema({
   empID: {
     type: Schema.Types.ObjectId,
     ref: "Employee",
-    required: true,
+    // required: true,
   },
   firstname: {
     type: String,

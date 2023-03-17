@@ -1,10 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import {
+  AiFillDelete,
+  AiFillEdit,
+  AiOutlineUsergroupAdd,
+} from "react-icons/ai";
 
 export default function EmpFamily() {
   const [allFam, setAllFam] = useState([]);
   const { id } = useParams();
+
+  const userId = id;
+
+  console.log(userId);
 
   useEffect(() => {
     axios
@@ -37,9 +46,15 @@ export default function EmpFamily() {
                 <Link
                   to={`/AddFam/${id}`}
                   class="btn btn-primary"
-                  style={{ backgroundColor: "#205E61", padding: "2%" }}
+                  style={{
+                    backgroundColor: "#227C70",
+                    paddingLeft: "12%",
+                    paddingRight: "12%",
+                    paddingTop: "2%",
+                    paddingBottom: "2%",
+                  }}
                 >
-                  + family member
+                  <AiOutlineUsergroupAdd />
                 </Link>
               </div>
             </div>
@@ -54,35 +69,31 @@ export default function EmpFamily() {
                   <th scope="col">Action</th>
                 </tr>
               </thead>
-              {allFam.map((family) => (
-                <tbody>
-                  <tr>
-                    <td>{family.firstname}</td>
-                    <td>{family.surname}</td>
-                    <td>{family.relationship}</td>
-                    <td>
-                      <Link
-                        to={/UpdateFam/}
-                        class="btn btn-primary"
-                        style={{
-                          backgroundColor: "#00ABB3",
-                          padding: "2%",
-                          margin: "2%",
-                        }}
-                      >
-                        Update
-                      </Link>
-                      <button
-                        type="submit"
-                        class="btn btn-primary"
-                        style={{ backgroundColor: "#A62349", padding: "2%" }}
-                      >
-                        Delete
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              ))}
+              {allFam
+                .filter((elem) => elem.empID == id)
+                .map((family) => (
+                  <tbody>
+                    <tr>
+                      <td>{family.firstname}</td>
+                      <td>{family.surname}</td>
+                      <td>{family.relationship}</td>
+                      <td>
+                        <Link
+                          to={/UpdateFam/}
+                          class="btn"
+                          style={{
+                            backgroundColor: "#FFFFFF",
+                            color: "#227C70",
+                            padding: "2%",
+                            marginRight: "13%",
+                          }}
+                        >
+                          <AiFillEdit />
+                        </Link>
+                      </td>
+                    </tr>
+                  </tbody>
+                ))}
             </table>
           </div>
         </div>
