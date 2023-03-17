@@ -3,5 +3,5 @@
 Technologies : 
 <ul>
 <li> MERN stack </li>
-<li> Bootrstrap </li>
+<li> Bootstrap </li>
 </ul>
