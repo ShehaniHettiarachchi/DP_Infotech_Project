@@ -14,14 +14,17 @@ Project-frontend:
   
 <li> Employee details page </li>
 <img src="https://user-images.githubusercontent.com/88665593/226510925-d1465088-89e6-46b0-be5f-225fdea32a0b.jpg">
-  
+<br></br>
+
 <li> Add employee page </li>
 <img src="https://user-images.githubusercontent.com/88665593/226510925-d1465088-89e6-46b0-be5f-225fdea32a0b.jpg">
-  
+<br></br>
+
 <li> Employee family details page </li>
 <img src="https://user-images.githubusercontent.com/88665593/226510925-d1465088-89e6-46b0-be5f-225fdea32a0b.jpg">
-  
+<br></br>  
 <li> Add family details page </li>
 <img src="https://user-images.githubusercontent.com/88665593/226510925-d1465088-89e6-46b0-be5f-225fdea32a0b.jpg">
+<br></br>
 </ul>  
 
