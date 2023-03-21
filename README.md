@@ -17,7 +17,7 @@ Project-frontend:
 <br></br>
 
 <li> Add employee page </li>
-<img src="https://user-images.githubusercontent.com/88665593/226510925-d1465088-89e6-46b0-be5f-225fdea32a0b.jpg">
+<img src="https://user-images.githubusercontent.com/88665593/226511962-3391dbac-42bf-4e24-a7e5-18b115c1888b.jpg">
 <br></br>
 
 <li> Employee family details page </li>
