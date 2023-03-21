@@ -24,7 +24,7 @@ Project-frontend:
 <img src="https://user-images.githubusercontent.com/88665593/226511762-779459e6-6f26-4df1-96d4-4bb70d491f8a.jpg">
 <br></br>  
 <li> Add family details page </li>
-<img src="https://user-images.githubusercontent.com/88665593/226510925-d1465088-89e6-46b0-be5f-225fdea32a0b.jpg">
+<img src="https://user-images.githubusercontent.com/88665593/226512474-19bf6ad6-309b-49ed-a663-d93ac19a025d.png">
 <br></br>
 </ul>  
 
